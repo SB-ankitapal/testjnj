@@ -17,3 +17,11 @@ properties:
       id: mu2x3ppu7hvll
     format: markdown
     description: 'If this question requires more details, they are captured here.'
+  refercheck:
+    $ref: 'stoplight://resources/overrides/b5iesgjTwsg'
+    x-stoplight:
+      id: rh7emb9fpa74g
+  referRowValue:
+    $ref: 'stoplight://resources/overrides/LcCdrpJMSQ4'
+    x-stoplight:
+      id: j63023z7svv8n
