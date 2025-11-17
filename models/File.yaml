@@ -26,3 +26,7 @@ properties:
     $ref: 'stoplight://resources/overrides/CABRKpvzrnE'
     x-stoplight:
       id: xs86oks3zs23v
+  refrrerer:
+    $ref: 'stoplight://resources/overrides/CABRKpvzrnE'
+    x-stoplight:
+      id: yxdp0e8mcm0p7
