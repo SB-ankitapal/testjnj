@@ -18,3 +18,11 @@ properties:
     x-stoplight:
       id: rs07z6zxj6ego
     format: uri
+  refer:
+    $ref: 'stoplight://resources/overrides/Njh9wVGt0jU'
+    x-stoplight:
+      id: 48uja0by90i11
+  refer2:
+    $ref: 'stoplight://resources/overrides/CABRKpvzrnE'
+    x-stoplight:
+      id: xs86oks3zs23v
