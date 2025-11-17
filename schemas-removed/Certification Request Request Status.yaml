@@ -1,0 +1,18 @@
+type: string
+x-stoplight:
+  id: v12ijh4ocohk3
+enum:
+  - submitted
+  - info_needed
+  - closed
+description: |-
+  API certification request status.
+
+  submitted - request for certification has been entered into the Certification Portal, awaiting assessment
+
+  info_needed - the assessor needs additional information from the requester or the current implementation cannot be certified
+
+  closed - request has been closed and the API is certified
+example: submitted
+default: submitted
+title: Certification Request Request Status

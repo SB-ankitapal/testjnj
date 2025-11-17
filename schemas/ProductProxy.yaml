@@ -1,0 +1,51 @@
+type: object
+x-stoplight:
+  id: y3ewh8ujqdqg0
+description: 'Relationship between a product and a proxy for a specific SEAPIM org, including the date this relationship become live or was decommissioned/removed from Seapim.'
+required:
+  - seapimOrg
+  - createdAt
+  - updatedAt
+  - product
+  - proxy
+properties:
+  seapimOrg:
+    $ref: ./SEAPIMOrg.yaml
+    x-stoplight:
+      id: uo7p7irwol1xc
+    description: SEAPIM organisation where the resources exist
+  wentLiveOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: rjp3nkolkm20g
+    example: '2025-08-11T05:49:57.000Z'
+    description: Date the product proxy relationship went live
+  decommissionedOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: dd2b1uskr44do
+    example: '2025-12-11T05:49:57.000Z'
+    description: Date the product proxy relationship was decommissioned
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: ror74bxyvbk46
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: 30v2z1kw11ghz
+  product:
+    $ref: ./Product.yaml
+    x-stoplight:
+      id: uzrccq2i3tlcr
+    description: Product
+  proxy:
+    $ref: ./Proxy.yaml
+    x-stoplight:
+      id: ubvhuxrrn6whr
+    description: API Proxy
+title: Product Proxy

@@ -1,0 +1,22 @@
+type: string
+x-stoplight:
+  id: qktm7eex0l6dx
+enum:
+  - draft
+  - live
+  - decommissioned
+  - deleted
+description: |-
+  API proxy status.
+
+  draft - proxy is not in SEAPIM production yet
+
+  live - proxy is deployed in SEAPIM production
+
+  decommissioned - proxy is undeployed in SEAPIM production
+
+  deleted - proxy has been removed from SEAPIM production (soft delete)
+
+  If a proxy is in draft status, a deletion action will cause the record to be removed (hard delete)
+example: draft
+default: draft

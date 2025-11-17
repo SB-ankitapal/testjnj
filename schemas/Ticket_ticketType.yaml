@@ -1,0 +1,22 @@
+title: Ticket_ticketType
+x-stoplight:
+  id: 7pef1jpdsjjjk
+description: |
+  Support ticket type.
+
+  development - Request to build or enhance an API proxy
+
+  certificaton - Request to certify an API, which involves a cyber assessment
+
+  subscription - Request for an application subscription to an API
+
+  decommission - Request to decommission an application and its API subscriptions or an API and all of its app subscriptions
+
+  role_change - Request to change an API's owner
+enum:
+  - development
+  - certification
+  - subscription
+  - decommission
+  - role_change
+example: development

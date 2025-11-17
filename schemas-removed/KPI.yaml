@@ -1,0 +1,44 @@
+type: object
+x-stoplight:
+  id: 1ula05omne0gm
+description: Key Performance Indicator (KPI) for an API.
+required:
+  - id
+  - createdAt
+  - updatedAt
+  - api
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: rff00fdl5xlsy
+    description: Database identifier
+  definition:
+    type: string
+    x-stoplight:
+      id: 90bmi4xqyrfm5
+    description: Formalized definition for the KPI
+    default: 90% of quotes are converted to orders within 10seconds
+  editedBy:
+    type: string
+    x-stoplight:
+      id: 9qu0tkig6a1v2
+    format: email
+    description: Person who last edited this KPI
+    example: user@example.com
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: lbq2o0rr80anb
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: ink1xmeaa6b7l
+  api:
+    $ref: ./API.yaml
+    x-stoplight:
+      id: 86xj2hjal37m3
+    description: KPI relates to this API
+title: KPI

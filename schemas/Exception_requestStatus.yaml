@@ -1,0 +1,11 @@
+type: string
+x-stoplight:
+  id: rohrqzm328cpk
+enum:
+  - submitted
+  - approved
+  - rejected
+  - closed
+description: Exception request status
+default: submitted
+example: approved

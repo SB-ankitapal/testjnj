@@ -1,0 +1,14 @@
+type: string
+x-stoplight:
+  id: m9sdpbcyu5ctm
+enum:
+  - design
+  - implementation
+description: |-
+  Exception type.
+
+  design - API specification deviates from the SE design standards
+
+  implementation - API implemenation deviates from the SE design or authentication standards
+example: design
+title: Exception Exception Type

@@ -1,0 +1,8 @@
+title: UpdatedAt
+x-stoplight:
+  id: ebsxbo92fwexz
+type: string
+format: date-time
+description: Time the record was last updated in the DB
+example: '2025-08-11T05:49:57.000Z'
+readOnly: true

@@ -1,0 +1,106 @@
+type: object
+x-stoplight:
+  id: ej1ibkbh0jqp7
+title: Build Quality
+description: Quality metrics related to how well and accurate the provider system implemented the API design agreed upon in a review session.
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    description: Database identifier
+    x-stoplight:
+      id: 907rj0jbg5d78
+  accuracy:
+    type: object
+    description: How well does the implementation reflect the specification
+    properties:
+      noDefects:
+        type: integer
+        minimum: 0
+        maximum: 1
+        description: No defects are present in the specification
+        x-stoplight:
+          id: avbf3p3vhy413
+      payloadExamplesWork:
+        description: Does the payload examples given in request fields/bodies work with the API implementation
+        type: integer
+        minimum: 0
+        maximum: 1
+        x-stoplight:
+          id: 3lvkmuyk8mpqt
+      implementationMatchesSpecification:
+        type: integer
+        minimum: 0
+        maximum: 1
+        description: The proxy and underlying API is identical to the underlying specification
+        x-stoplight:
+          id: kdcrwuz7vv7uv
+    x-stoplight:
+      id: irghojgl82ssy
+  providerQuality:
+    type: object
+    description: Details about the backend implementation of the specification
+    properties:
+      implementationMatchesSpecification:
+        type: integer
+        minimum: 0
+        maximum: 1
+        description: Does the implemented API match the specification
+        x-stoplight:
+          id: h9xiqufgf0d2u
+      responsiveness:
+        type: integer
+        minimum: 0
+        maximum: 2
+        description: |-
+          How long (on average) does it take the backend to respond?
+          2 - Under 1 second
+          1 - One to five seconds
+          0 - More than 5 seconds
+        x-stoplight:
+          id: 3ct8hxy20t56y
+    x-stoplight:
+      id: iqubs086f7u2v
+  properErrorHandling:
+    type: object
+    description: Are error codes used properly?
+    properties:
+      4xx:
+        type: integer
+        minimum: 0
+        maximum: 1
+        description: Various 400 error code usage
+        x-stoplight:
+          id: fa58d96ksc5a1
+      5xx:
+        type: integer
+        minimum: 0
+        maximum: 1
+        description: Various 500 error code usage
+        x-stoplight:
+          id: 0jzp1xh3judz7
+      singleErrorStructure:
+        description: Does the backend system have a single structure for all 4xx and 5xx errors
+        type: integer
+        minimum: 0
+        maximum: 1
+        x-stoplight:
+          id: i6ge0rlxqclrj
+      usefulErrorMessages:
+        description: Are the error messages easy for consumer to understand what went wrong?
+        type: integer
+        minimum: 0
+        maximum: 1
+        x-stoplight:
+          id: agbc50wic5ot9
+    x-stoplight:
+      id: 6pvpinmx1etve
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: s2km580hmn9ju
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: edkruz6dzgyii

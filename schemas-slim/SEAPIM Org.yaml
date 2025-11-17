@@ -1,0 +1,19 @@
+type: string
+x-stoplight:
+  id: g2ps74dfhju45
+enum:
+  - seapim_non_prod
+  - seapim_pre_prod
+  - seapim_prod
+description: |-
+  SEAPIM platform organisation name
+
+  seapim_non_prod - Non-production
+
+  seapim_pre_prod - Pre-production
+
+  seapim_prod - Production
+
+  Actual names have dashes rather than underscores
+example: seapim_non_prod
+title: Seapim Org

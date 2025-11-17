@@ -1,0 +1,10 @@
+type: string
+x-stoplight:
+  id: 3765tt40vlopj
+enum:
+  - non_prod
+  - pre_prod
+  - prod
+title: Request Target Environment
+description: Support request target environment
+example: non_prod

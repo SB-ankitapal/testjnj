@@ -1,0 +1,92 @@
+type: object
+x-stoplight:
+  id: 4hfhn20v097lw
+title: Subscription Request
+description: Support request that asks for an API subscription to be enabled or updated for a specified application assetId.
+required:
+  - id
+  - environments
+  - assetId
+  - applicationName
+  - isManual
+  - isPrivate
+  - createdAt
+  - updatedAt
+  - ticket
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: lusjaacfy7t83
+    description: Database identifier
+  environments:
+    x-stoplight:
+      id: 35y13k2br7n44
+    description: Request target environments i.e. SEAPIM platform instances
+    type: array
+    items:
+      $ref: ./Request Target Environment.yaml
+      x-stoplight:
+        id: 3q9jtfpvckxzi
+  requestStatus:
+    $ref: ./Subscription Request Request Status.yaml
+    x-stoplight:
+      id: 73oc5uxdifm07
+    description: Request status
+  assetId:
+    type: string
+    x-stoplight:
+      id: 026aholufi9c7
+    description: Unique asset id for this application in the SE asset management system
+    example: '12345'
+  applicationName:
+    type: string
+    x-stoplight:
+      id: urbsiphvbnwd0
+    description: Application name
+    example: SE API Management Web Portal
+  callRate:
+    type: integer
+    x-stoplight:
+      id: wnc7j8lahmyi2
+    description: Allocated maximum number of API calls allowed per minute
+    example: 600
+  scopes:
+    type: array
+    x-stoplight:
+      id: v9la264pied0i
+    description: 'List of API scopes which grant conditional access to specified API, using partial matching of operations by a string in the endpoint path'
+    items:
+      x-stoplight:
+        id: kll696w5ho3m7
+      type: string
+      example: '*:read, apis:write'
+  isManual:
+    type: boolean
+    x-stoplight:
+      id: ah4dg3m88iz3k
+    description: Whether or not the request is processed manually or automatically
+    default: false
+  isPrivate:
+    type: boolean
+    x-stoplight:
+      id: hc4fu0ga33n5e
+    description: 'Whether this request is private, meaning the triggered emails redirect to the requester'
+    default: false
+  createdAt:
+    type: string
+    format: date-time
+    description: The time this record was created
+    x-stoplight:
+      id: 0f19hms5bqsc0
+  updatedAt:
+    type: string
+    format: date-time
+    description: The time this record was last updated
+    x-stoplight:
+      id: jlnxgbzckgfep
+  ticket:
+    $ref: ./Ticket.yaml
+    x-stoplight:
+      id: agpp2uu1im8cg
+    description: 'Common ticketing attributes, shared by all requests'

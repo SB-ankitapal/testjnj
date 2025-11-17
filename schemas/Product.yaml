@@ -1,0 +1,94 @@
+type: object
+x-stoplight:
+  id: 6vg48xw0swe7l
+description: |-
+  Seapim product that groups one or more API proxies.
+
+  A record is uniquely identified by seapimOrg + productName combined
+required:
+  - id
+  - seapimOrg
+  - productName
+  - createdAt
+  - updatedAt
+  - consumers
+  - productProxies
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: g9pog9q1ekthf
+    description: Database identifier
+  seapimOrg:
+    $ref: ./SEAPIMOrg.yaml
+    x-stoplight:
+      id: rf152785diu8r
+    description: SEAPIM platform organisation name
+  productName:
+    type: string
+    x-stoplight:
+      id: 9qiz8hsrpmsx1
+    example: Product-SE API Managment
+    description: Product name
+  callRate:
+    type: integer
+    x-stoplight:
+      id: 7r98h6l5wapr5
+    description: 'Allocated maximum number of API calls allowed per minute, converted from actual SEAPIM quota configuation which may be defined using a different time unit'
+    example: 600
+  quota:
+    type: integer
+    x-stoplight:
+      id: w969jm49qhhat
+    description: 'SEAPIM quota number, first part of a triplet: quota number per (interval * time unit). For example 1000 per 2 * hour'
+    example: 1000
+  quotaInterval:
+    type: integer
+    x-stoplight:
+      id: 3jtg5xi99uroy
+    description: 'SEAPIM quota interval, second part of a triplet: quota number per (interval * time unit). For example 1000 per 2 * hour'
+    example: 2
+  quotaTimeunit:
+    $ref: ./Quota_timeunit.yaml
+    x-stoplight:
+      id: z00mlk7pakw71
+    description: 'SEAPIM quota time unit, third part of a triplet: quota number per (interval * time unit). For example 1000 per 2 * hour'
+  scopes:
+    type: array
+    x-stoplight:
+      id: wwge0q7rv9bf1
+    description: 'List of API scopes which grant conditional access to specified API, using partial matching of operations by a string in the endpoint path'
+    items:
+      x-stoplight:
+        id: ae52cyrdy5v16
+      type: string
+      example: 'urn:API-Metadata-V2:*:read, urn:API-Metadata-V2:apis:write"'
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: h3bqh70f95pxi
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: hpsfn1yf01gnv
+  consumers:
+    type: array
+    x-stoplight:
+      id: edd6q4xd4ekh5
+    description: List of application consumers with a subscription that refers to this product
+    items:
+      $ref: ./Consumer.yaml
+      x-stoplight:
+        id: whyv0s8tspsdk
+  productProxies:
+    type: array
+    x-stoplight:
+      id: 36gur8iqgbsr2
+    description: List of API proxies included in this product
+    items:
+      $ref: ./ProductProxy.yaml
+      x-stoplight:
+        id: txzkb30lf6jx4
+title: ''

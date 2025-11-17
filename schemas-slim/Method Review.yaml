@@ -1,0 +1,73 @@
+type: object
+x-stoplight:
+  id: bw8y5a438p699
+title: Method Review
+description: The results of reviewing a specific method for a path in an API design document.
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: o9trgqp9u33i2
+  method:
+    description: The method being reviewed
+    enum:
+      - GET
+    x-stoplight:
+      id: a4ym0ewl7yngd
+  summary:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the summary
+    x-stoplight:
+      id: ewadfmgh43s4d
+  description:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the description
+    x-stoplight:
+      id: 2pxbl17x1fxvz
+  headers:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the headers
+    x-stoplight:
+      id: ex9ouakd3nb00
+  queryParameters:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the query parameters
+    x-stoplight:
+      id: qy8jpy05xyrol
+  requestBody:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the request body
+    x-stoplight:
+      id: x5mka98d3awe8
+  successResponses:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing all of the 2xx and 3xx responses
+    x-stoplight:
+      id: 9hn1hl70gbznd
+  errorResponses:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing all of the 4xx and 5xx responses
+    x-stoplight:
+      id: vddliax03sut2
+  methodUsed:
+    $ref: ../models/Check.yaml
+    description: Was the correct method used for the use case
+    x-stoplight:
+      id: lob8zg1p29n2t
+  parameters:
+    type: array
+    description: The reviews for parameters that are on this method
+    items:
+      $ref: ./Parameter Review.yaml
+      x-stoplight:
+        id: k1sgjn8recfjs
+    x-stoplight:
+      id: eky1g68axtq38
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: xke3j72czwb9r
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    x-stoplight:
+      id: ftvcu7nkff3m6

@@ -1,0 +1,49 @@
+type: object
+x-stoplight:
+  id: xzc2alkjlqp7a
+title: Document Location
+description: Location for where to find an API Design in various systems for a specific version.
+required:
+  - id
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    description: Database identifier
+    x-stoplight:
+      id: 9d0m2jsoxrwvu
+  designRepository:
+    type: string
+    x-stoplight:
+      id: wdio4ykyb15nm
+    description: The repository for where to find the design for the associated review tool
+  designBranch:
+    type: string
+    x-stoplight:
+      id: 3kpgacmh5c7gx
+    description: The branch in the design repository for where to find the file
+  designFilePath:
+    type: string
+    x-stoplight:
+      id: j4ix7z65c7hjn
+    description: The path to the file in the review system repo
+  designProjectPath:
+    type: string
+    x-stoplight:
+      id: cwfiza6p372o7
+    description: The URL to the project for where the api design exists in the design tool
+    format: uri
+  catalogFileName:
+    type: string
+    x-stoplight:
+      id: ovyqlsi6pgwwi
+    description: The name of the finalized file as it appears in the master system
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: rb8rcnjlvs7b6
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    x-stoplight:
+      id: 2zbq65getdyqc

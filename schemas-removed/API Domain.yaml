@@ -1,0 +1,35 @@
+type: string
+x-stoplight:
+  id: lgakjdi9urfeb
+enum:
+  - DDH
+  - DENG
+  - IOT
+  - EIT
+  - LOB
+  - DCR
+  - FIN
+  - GHR
+  - GSC
+description: |
+  Business domain that owns this API.
+
+  DCR - Digital Customer Relationship
+
+  DDH - Digital Data Hub
+
+  DENG - Digital Engineering
+
+  GSC - Global Supply Chain
+
+  EIT - Enterprise IT
+
+  LOB - Line of Business
+
+  FIN - Finance
+
+  GHR - Global Human Resources
+
+  IOT - IOT & Digital Offers
+example: DCR
+title: API Domain

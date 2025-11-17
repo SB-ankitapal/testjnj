@@ -1,0 +1,18 @@
+type: string
+x-stoplight:
+  id: xdfpj7o2xmn4q
+enum:
+  - not_certified
+  - certified
+  - recertify
+description: |-
+  API certification status, derived from linked certification records for specific grandchild versions.
+
+  not_certified - no version is certified
+
+  certified - most recent version has been certified
+
+  recertify - a prior version is certified but it's not the most recent version.
+example: not_certified
+default: not_certified
+title: API Certification Status

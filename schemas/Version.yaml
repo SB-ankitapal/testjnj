@@ -1,0 +1,154 @@
+type: object
+x-stoplight:
+  id: bddrasjp88wfg
+title: Version
+description: |-
+  Represents the API document for a specific version of an API which used for reference by application developers. A version document is also known as an API specification. Each API enhancement requires a new version to be published in the catalog which includes an incremented minor version number, along with descriptions and examples for the functional changes.
+
+  Each newer version in the same series must be backwardly compatable, ie. non-breaking for consuming applications.
+required:
+  - id
+  - name
+  - version
+  - minorNumber
+  - isDraft
+  - isCertified
+  - isPublished
+  - createdAt
+  - updatedAt
+  - certification
+  - certificationRequest
+  - defects
+  - documentLocation
+  - documentQuality
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: tr0dtg22u6c9j
+    description: Database identifier
+  name:
+    type: string
+    x-stoplight:
+      id: newtab95qcvqx
+    description: 'Unique name of the API document, matching the name inside the specification'
+    example: Quote
+  version:
+    type: string
+    x-stoplight:
+      id: 2n6bhsr0gslw3
+    description: 'major.minor API version, matching the version inside the specification. It''s a numeric string so that 1.10 and 1.1 can be distinguished.'
+    example: '3.18'
+  minorNumber:
+    type: integer
+    x-stoplight:
+      id: dsiudgz5y2cj5
+    description: 'Specific minor number of this document, parsed from the 2nd number of the version field or 0 if it is missing. Can be thought of as revision number'
+    example: 18
+    readOnly: true
+  isDraft:
+    type: boolean
+    x-stoplight:
+      id: 7gl9o09s6n1rf
+    description: 'Whether this version is a draft, meaning a review has been requested but has not taken place'
+    default: true
+  isCertified:
+    type: boolean
+    x-stoplight:
+      id: wkhukmh8gc54w
+    description: Whether this version is certified by the cyber assessment team
+    default: false
+  isPublished:
+    type: boolean
+    x-stoplight:
+      id: 6kd6tdanzkvd2
+    description: Whether this document version is visible to general users browsing the catalog.
+    default: true
+  designedBy:
+    type: string
+    x-stoplight:
+      id: nwn66yxmm80c5
+    format: email
+    description: The person who designed this API specification version. Typically the one who requested the review but not always hence must be kept separate.
+    example: user@example.com
+  changes:
+    x-stoplight:
+      id: xs2f85vo5zubj
+    description: 'List of changes for this API compared to the previous version. It Could be previous minor version, or if this is a new major version (2.0) then this would be the changes made for the major version'
+    type: array
+    items:
+      $ref: ../models/Change.yaml
+      x-stoplight:
+        id: 2h2zv6sdlncfe
+  wentLiveOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: xm66prbirla8g
+    description: Date when this minor version was usable on the production instance of SEAPIM
+    example: '2025-08-11T05:49:57.000Z'
+  qualityScore:
+    type: number
+    x-stoplight:
+      id: ofie4a1f85iak
+    description: 'Assessed document quality score, calculated as a percentage of all documentQuality metrics'
+    format: float
+    example: 80
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: 2sh2rnq76tcor
+    description: The time this record was created
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    x-stoplight:
+      id: 7wfh78gth5n08
+    description: The time this record was last updated
+  certification:
+    $ref: ./Certification.yaml
+    x-stoplight:
+      id: 6lex61xo2la9r
+    description: Certification record for this version
+  certificationRequest:
+    $ref: ./CertificationRequest.yaml
+    x-stoplight:
+      id: zkes4hvae978x
+    description: Certification request for this version
+  defects:
+    type: array
+    x-stoplight:
+      id: 5j1vf5mregiwt
+    description: List of defects for this version identified during a design review. A defect is a deviation from the SE design standards.
+    items:
+      $ref: ./Defect.yaml
+      x-stoplight:
+        id: 10okye2k7s38p
+  documentLocation:
+    $ref: ./DocumentLocation.yaml
+    x-stoplight:
+      id: iq2o29pi3sba2
+    description: Document location information for this version
+  documentQuality:
+    $ref: ./DocumentQuality.yaml
+    x-stoplight:
+      id: ppt1f5g8pg6yh
+    description: 'Assessed API document qualities, captured as true/false values for each aspect of idealized quality. A document with high quality score is considered complete and easy for an application developer to utilize.'
+  exceptions:
+    type: array
+    x-stoplight:
+      id: 93lgkgdt3ri36
+    description: List of approved exceptions with respect to the SE Design Standards. Typically these are only granted as time-limited exceptions and an API owner is expected to align to the standards in a future version.
+    items:
+      $ref: ./Exception.yaml
+      x-stoplight:
+        id: 9xkxogopx6rbo
+  review:
+    $ref: ./Review.yaml
+    x-stoplight:
+      id: d3na68qsm9unz
+    description: Design review for this version
+  reviewSlot:
+    $ref: ./ReviewSlot.yaml
+    x-stoplight:
+      id: 8ydk5a9cwnof0
+    description: Booked calendar timeslot for the design review.

@@ -1,0 +1,124 @@
+type: object
+x-stoplight:
+  id: ld3jpdvp306d6
+description: 'An exception which a business team has requested during delivery of an API request, where they wish to have time to resolve a deviation from the SE design standards without blocking the current delivery cycle. The provided justification is evaluated for approval or not by the API team. The API owner is expected to agree on a due date when the exception will be resolved in order for it to be approved.'
+required:
+  - id
+  - exceptionNumber
+  - exceptionType
+  - justification
+  - isPermanent
+  - createdAt
+  - updatedAt
+  - api
+  - requester
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: jfg0175h4mx5q
+    description: Database identifier
+  exceptionNumber:
+    type: string
+    x-stoplight:
+      id: 3816rm5yv67zx
+    description: Unique exception number
+    example: X-00123
+    readOnly: true
+  exceptionType:
+    $ref: ./Exception Exception Type.yaml
+    x-stoplight:
+      id: pqznggfiba6gr
+    description: Exception type
+  requestStatus:
+    $ref: ./Exception Request Status.yaml
+    x-stoplight:
+      id: jhdqv2n6zaeqx
+    description: Exception status
+  justification:
+    type: string
+    x-stoplight:
+      id: dsm3oedu4k9jh
+    description: 'Justification from the requester, explaining why alignment with the SE standards can not be achieved in the current delivery cycle'
+  description:
+    type: string
+    x-stoplight:
+      id: hzz9x8a2oy2q2
+    description: 'Description of the exception by the API reviewer, including enough detail for a tester to verify whether it has been resolved in a later delivery cycle '
+  isPermanent:
+    type: boolean
+    x-stoplight:
+      id: t38chq6al9awl
+    default: false
+    description: Whether or not this exception is agreed to be permanent e.g. not possible or very costly to resolve
+  approvedOn:
+    type: string
+    x-stoplight:
+      id: fw89z37lg84t4
+    format: date-time
+    description: Date exception was approved
+  originallyDueOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: jk60u8h9lq70u
+    example: '2025-08-11T05:49:57.000Z'
+    description: 'Date exception will be resolved, as agreed with the API owner'
+  extendedDueOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: 55jhe4gooligm
+    example: '2025-12-11T05:49:57.000Z'
+    description: Extension date after the originateDueOn date has passed and the exception has yet to be resolved
+  closedOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: w29s747qceset
+    example: '2025-12-30T05:49:57.000Z'
+    description: Date the exception was closed i.e. issue has been verified as resolved
+  approvedBy:
+    type: string
+    x-stoplight:
+      id: a5cr9yv29ss0h
+    format: email
+    description: Person who approved this exception
+    example: approver@example.com
+  editedBy:
+    type: string
+    x-stoplight:
+      id: 1prwcpyzrhv8b
+    format: email
+    description: Person who last updated this exception
+    example: user@example.com
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: ws4xob60sbbbm
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: 1q77ptizf1t64
+  api:
+    $ref: ./API.yaml
+    x-stoplight:
+      id: mmpqnenkcxauk
+    description: The exception relates to this API
+  proxy:
+    $ref: ./Proxy.yaml
+    x-stoplight:
+      id: cqxqyrpioaljc
+    description: 'The exception relates to this API proxy, required when exceptionType is implementation'
+  requester:
+    $ref: ./Stakeholder.yaml
+    x-stoplight:
+      id: l6nqiie76ki6r
+    description: Person who requested this exception
+  version:
+    $ref: ./Version.yaml
+    x-stoplight:
+      id: q7tqvw2auxb6n
+    description: 'The exception relates to this API version, required when exception type is design'

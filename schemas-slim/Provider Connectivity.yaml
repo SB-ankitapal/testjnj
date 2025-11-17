@@ -1,0 +1,40 @@
+type: object
+x-stoplight:
+  id: jojwd00jgcjc2
+title: Provider Connectivity
+required:
+  - id
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: 4592i0g970u4t
+  connectionTimeout:
+    $ref: ../models/RowValue.yaml
+    x-stoplight:
+      id: e30kb4iv5vvqq
+  ioTimeout:
+    $ref: ../models/RowValue.yaml
+    x-stoplight:
+      id: nkq82wedq0pgu
+  regionalServerRouting:
+    $ref: ../models/RowValue.yaml
+    x-stoplight:
+      id: trst8byhbmerb
+  twoWaySsl:
+    $ref: ../models/RowValue.yaml
+    x-stoplight:
+      id: 3cik8642ict72
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: wry370gw72ble
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: pd344e45z3bag
+description: Details related to configuring how SEAPIM Connects with the backend (networking only).

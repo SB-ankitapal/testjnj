@@ -1,0 +1,73 @@
+type: object
+x-stoplight:
+  id: ta7lz5ocg7889
+title: Method Review
+description: The results of reviewing a specific method for a path in an API design document.
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: nqus5e2c6wp8b
+  method:
+    description: The method being reviewed
+    enum:
+      - GET
+    x-stoplight:
+      id: 4ojcdm4zwg40f
+  summary:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the summary
+    x-stoplight:
+      id: e553y4f6mexch
+  description:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the description
+    x-stoplight:
+      id: 4q4vhq2sjg1ff
+  headers:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the headers
+    x-stoplight:
+      id: i6t0gb6zr28r5
+  queryParameters:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the query parameters
+    x-stoplight:
+      id: wzooxgd9b2g3s
+  requestBody:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the request body
+    x-stoplight:
+      id: 0ncbsuvf0o214
+  successResponses:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing all of the 2xx and 3xx responses
+    x-stoplight:
+      id: rocz4bv24hln7
+  errorResponses:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing all of the 4xx and 5xx responses
+    x-stoplight:
+      id: tlkpqzs0dbuca
+  methodUsed:
+    $ref: ../models/Check.yaml
+    description: Was the correct method used for the use case
+    x-stoplight:
+      id: byxghv2fqpclb
+  parameters:
+    type: array
+    description: The reviews for parameters that are on this method
+    items:
+      $ref: ./Parameter Review.yaml
+      x-stoplight:
+        id: 7vdmsbybvh07b
+    x-stoplight:
+      id: 5b1uahjdhqpgv
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: q9pak59nhqv51
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    x-stoplight:
+      id: 14jaeag18nume

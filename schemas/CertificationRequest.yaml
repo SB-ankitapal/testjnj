@@ -1,0 +1,43 @@
+type: object
+x-stoplight:
+  id: x671hyau7kgaw
+description: A request for the cyber team to certify a specific version of an API. The certification assessment tests the API for any security vulnerabilities and for compliance with approved authentication patterns. They will also rate its risk level.
+required:
+  - id
+  - requestStatus
+  - createdAt
+  - updatedAt
+  - ticket
+  - version
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: 2ytr2jrywgiwc
+    description: Database identifier
+  requestStatus:
+    $ref: ./CertificationRequest_requestStatus.yaml
+    x-stoplight:
+      id: jvkfaki6kid3f
+    description: Request status
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: rc5876j0i70ce
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: icdh8bjrq7udc
+  ticket:
+    $ref: ./Ticket.yaml
+    x-stoplight:
+      id: zpb1ij0ffpih3
+    description: 'Common ticketing attributes, shared by all requests'
+  version:
+    $ref: ./Version.yaml
+    x-stoplight:
+      id: h3zcxzin8mtpn
+    description: API version to be certified
+title: Certification Request

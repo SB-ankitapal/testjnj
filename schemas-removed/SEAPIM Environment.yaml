@@ -1,0 +1,22 @@
+type: string
+x-stoplight:
+  id: 7x28vbvhz45ob
+enum:
+  - dev
+  - qa
+  - preprod
+  - prod
+title: SEAPIM Environment
+description: |-
+  SEAPIM platform deployment environment name. 
+
+  dev - Development, an environment in the seapim_non_prod org
+
+  qa - QA, an environment in the seapim_non_prod org
+
+  preprod - Pre-production, only environment in the seapim_pre_prod org
+
+  prod - Production, only environment in the seapim_prod org
+
+  Used as subdomains for API Management operations endpoints, for example https://api.qa.se.com when the environment is qa.
+example: qa

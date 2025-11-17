@@ -1,0 +1,71 @@
+type: object
+x-stoplight:
+  id: 0hbkql7zsb8uj
+description: |-
+  Business capability, as defined within the SE Asset Management system. 
+
+  The fields are defined as read-only because the data can only be updated in the asset system.
+required:
+  - assetId
+  - assetStatus
+  - capability
+  - businessArea
+  - itOwnerEmail
+  - inBasepath
+  - createdAt
+  - updatedAt
+properties:
+  assetId:
+    type: string
+    x-stoplight:
+      id: ktcrhvjq0d3b3
+    example: '54321'
+    description: Unique asset id for this capability
+    readOnly: true
+  assetStatus:
+    type: string
+    x-stoplight:
+      id: skdb8jzaezt29
+    description: Asset status that originated from the asset system
+    example: In Operation
+    readOnly: true
+  capability:
+    type: string
+    x-stoplight:
+      id: t982mjq1bragg
+    description: Capability name
+    example: SA_Quotation
+    readOnly: true
+  businessArea:
+    type: string
+    x-stoplight:
+      id: yukanpo8fmzhb
+    description: Parent business area for this capability
+    example: Sales
+    readOnly: true
+  itOwnerEmail:
+    type: string
+    x-stoplight:
+      id: qjqmm8fflg632
+    description: Person who is the capability IT owner
+    example: user@example.com
+    format: email
+    readOnly: true
+  inBasepath:
+    type: string
+    x-stoplight:
+      id: 7qi15c9zzhbh8
+    description: 'Mapped capability string within an API operation URL (basepath component of the URL), that refers to a capability. Value mapping rules are defined by the API team. The value in the URL is decoupled to prevent capability name changes causing APIs to fail.'
+    example: sales-operation
+    readOnly: true
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: in9bndpxiyf4z
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: gvwslj6y46fvi
+title: Capability

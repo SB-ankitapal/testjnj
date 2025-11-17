@@ -1,0 +1,130 @@
+type: object
+x-stoplight:
+  id: jr94qn4j4jg4k
+description: 'Person with some involvement in an API lifecycle, identified by their email and optionally a SESA id.'
+required:
+  - id
+  - email
+  - createdAt
+  - updatedAt
+  - ownedApis
+  - ownedConsumers
+  - requestedExceptions
+  - apiOwnerForTickets
+  - appOwnerForTickets
+  - requesterForTickets
+  - ratings
+  - readNotifications
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: 5jurfte52cjfr
+    description: Database identifier
+  email:
+    type: string
+    x-stoplight:
+      id: 3crwnpogxsi8t
+    description: Unique email address for this stakeholder
+    example: user@example.com
+  roles:
+    type: array
+    x-stoplight:
+      id: ybjuf1wm4dpga
+    description: 'Stakeholder roles. If not set, user is the default role.'
+    items:
+      x-stoplight:
+        id: do13lcy2v28ng
+      enum:
+        - user
+        - admin
+        - api_owner
+        - app_owner
+  sesaId:
+    type: string
+    x-stoplight:
+      id: i4in3q6w9usi1
+    description: Schneider electric corporate id
+    example: SESA12345
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: y56keuc6bne2g
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: nyei20epp0fqr
+  ownedApis:
+    type: array
+    x-stoplight:
+      id: 864j2r7dzun6j
+    description: List of APIs owned by this stakeholder
+    items:
+      $ref: ./API.yaml
+      x-stoplight:
+        id: 6haaajnnrfslm
+  ownedConsumers:
+    type: array
+    x-stoplight:
+      id: rrkrt1s5e2wbl
+    description: List of consumer applications owned by this stakeholder
+    items:
+      $ref: ./Consumer.yaml
+      x-stoplight:
+        id: hwrfkcdkdtr5o
+  requestedExceptions:
+    type: array
+    x-stoplight:
+      id: 2hhw820uq8a5c
+    description: List of API standards exceptions requested by this stakeholder
+    items:
+      $ref: ./Exception.yaml
+      x-stoplight:
+        id: dsui78npfkwkc
+  apiOwnerForTickets:
+    type: array
+    x-stoplight:
+      id: gwg7tg3y5l9em
+    description: List of Tickets where this stakeholder is the API owner
+    items:
+      $ref: ./Ticket.yaml
+      x-stoplight:
+        id: 8uxzsztl78v9r
+  appOwnerForTickets:
+    type: array
+    x-stoplight:
+      id: lqkbkhq17vj4g
+    description: List of Tickets where this stakeholder is the application owner
+    items:
+      $ref: ./Ticket.yaml
+      x-stoplight:
+        id: u37c62zwqxrvq
+  requesterForTickets:
+    type: array
+    x-stoplight:
+      id: orm6v9517qg3i
+    description: List of Tickets where this stakeholder is the requester
+    items:
+      $ref: ./Ticket.yaml
+      x-stoplight:
+        id: unw8ic9o3bwl2
+  ratings:
+    type: array
+    x-stoplight:
+      id: h4twwpj1fk41e
+    description: List of ratings posted by this stakeholder
+    items:
+      $ref: ./Rating.yaml
+      x-stoplight:
+        id: qjb9pwv49cb8x
+  readNotifications:
+    type: array
+    x-stoplight:
+      id: f6aktc07o71xr
+    description: List of notifications read by this stakeholder
+    items:
+      $ref: ./ReadNotification.yaml
+      x-stoplight:
+        id: cqojr8m2zkrfd

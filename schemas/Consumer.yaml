@@ -1,0 +1,117 @@
+type: object
+x-stoplight:
+  id: dq4r5jdhz5qtw
+description: |
+  An application that calls API operations and consumes data returned.
+
+  A record is uniquely identified by either:
+
+  - seapimAppId
+
+  - seapimOrg + seapimAppName + seapimAppEmail combined
+required:
+  - id
+  - seapimOrg
+  - seapimAppName
+  - seapimAppEmail
+  - isDecommissioned
+  - createdAt
+  - updatedAt
+  - products
+  - decommissionRequest
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: r4ho8fgxwp1tc
+    description: Database identifier
+  seapimOrg:
+    $ref: ./SEAPIMOrg.yaml
+    x-stoplight:
+      id: rwu16y0c7499o
+    description: SEAPIM platform organisation name
+  seapimAppId:
+    type: string
+    x-stoplight:
+      id: wbdg22py7na2y
+    description: Unique application identifier in SEAPIM
+    example: a1256f9-af57-444e-b637-82f3d1e98087
+  seapimAppName:
+    type: string
+    x-stoplight:
+      id: 54yj7po7bs0zt
+    description: Application name in the SEAPIM organisation
+    example: SE API Management
+  seapimAppEmail:
+    type: string
+    x-stoplight:
+      id: nwc2dmyqzwceb
+    description: 'SEAPIM developer email, initialized as the App owner email which cannot be changed later'
+    example: user@example.com
+  attributes:
+    type: array
+    x-stoplight:
+      id: y3f2d1k9qt1e9
+    description: List of custom application key/value pairs where each key is a SEAPIM attribute name
+    items:
+      x-stoplight:
+        id: fusvjbnndekzi
+      type: object
+  isDecommissioned:
+    type: boolean
+    x-stoplight:
+      id: 5pde1lqqku2io
+    default: false
+    description: Whether or not the application is decomissioned
+  wentLiveOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: vghxqaddtfzpe
+    example: '2025-08-11T05:49:57.000Z'
+    description: Date the application was first activated on SEAPIM
+  decommissionedOn:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: b98d23gmd5one
+    example: '2025-08-22T05:49:57.000Z'
+    description: Date the application was revoked on SEAPIM
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: k6mme0jo9m5vd
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: zacn4ejgmhy3u
+  ApplicationAsset:
+    $ref: ./ApplicationAsset.yaml
+    x-stoplight:
+      id: 6jzikva3xzqvx
+    description: Unique application id and name in the SE asset system. Partner applications do not have an assetId
+  owner:
+    $ref: ./Stakeholder.yaml
+    x-stoplight:
+      id: 815nxq257liqo
+    description: Person in SE who is the application owner
+  products:
+    type: array
+    x-stoplight:
+      id: xurumkgdd5nw1
+    description: List of SEAPIM products that group one or more API proxies
+    items:
+      $ref: ./Product.yaml
+      x-stoplight:
+        id: bo3fftar2lgxz
+  decommissionRequest:
+    type: array
+    x-stoplight:
+      id: gnsryx8xacea9
+    description: Decommission request for this application
+    items:
+      $ref: ./DecommissionRequest.yaml
+      x-stoplight:
+        id: il7ea0yqdi9hi

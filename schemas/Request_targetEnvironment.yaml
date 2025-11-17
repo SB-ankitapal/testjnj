@@ -1,0 +1,10 @@
+type: string
+x-stoplight:
+  id: laghsrp6jzf02
+enum:
+  - non_prod
+  - pre_prod
+  - prod
+title: Request_targetEnvironment
+description: Support request target environment
+example: non_prod

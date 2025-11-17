@@ -1,0 +1,30 @@
+type: object
+x-stoplight:
+  id: 7bk07ov4k6s1w
+title: Support Contact
+description: Backend and technical support contacts for a proxy.
+required:
+  - id
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: skkrj113r8t57
+  providerContact:
+    $ref: ../models/Contact.yaml
+    x-stoplight:
+      id: 654j438iuy9yo
+  primaryContact:
+    $ref: ./SupportContact.yaml
+    x-stoplight:
+      id: jwjphsictaerv
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: v9noyogn08o7t
+  updatedAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: op7uuxol9kkk9

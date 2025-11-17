@@ -1,0 +1,12 @@
+type: string
+x-stoplight:
+  id: s7jmqe52hwx3k
+enum:
+  - submitted
+  - pending_approval
+  - approved
+  - closed
+  - rejected
+description: Decommission request status
+example: pending_approval
+default: submitted

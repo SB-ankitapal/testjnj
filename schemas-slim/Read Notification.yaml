@@ -1,0 +1,46 @@
+type: object
+x-stoplight:
+  id: 0r9qxusotc8ix
+title: Read Notification
+description: |-
+  Record capturing whether an API portal user has read or dismissed a specific notification.
+
+  No record will exists for a stakeholder who has yet to open the notification feed since it was posted.
+required:
+  - wasRead
+  - wasDismissed
+  - createdAt
+  - updatedAt
+  - notification
+  - stakeholder
+properties:
+  wasRead:
+    type: boolean
+    x-stoplight:
+      id: 8pmjosr51u6tj
+    description: Whether or not the notification has been read by a stakeholder
+  wasDismissed:
+    type: boolean
+    x-stoplight:
+      id: j8go3a0d10s83
+    description: 'Whether or not a notification has been dismissed by a stakholder, meaning they do not want to see it again'
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: 9bu3ut3zv99ee
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: jn8q6zgkssc2i
+  notification:
+    $ref: ./Notification.yaml
+    x-stoplight:
+      id: sofn40nfhe0i9
+    description: A notification for the API community
+  stakeholder:
+    $ref: ./Stakeholder.yaml
+    x-stoplight:
+      id: he9056ia4znug
+    description: Person who has interacted with the notification feed on the API portal

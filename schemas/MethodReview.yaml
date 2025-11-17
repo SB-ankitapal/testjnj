@@ -1,0 +1,73 @@
+type: object
+x-stoplight:
+  id: 0ozlettjwn39g
+title: Method Review
+description: The results of reviewing a specific method for a path in an API design document.
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: mg3bj37m7khnp
+  method:
+    description: The method being reviewed
+    enum:
+      - GET
+    x-stoplight:
+      id: 0iw0cz2zgv1cl
+  summary:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the summary
+    x-stoplight:
+      id: rvxtfr7np6oq5
+  description:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the description
+    x-stoplight:
+      id: xk8kpqcy6gvvs
+  headers:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the headers
+    x-stoplight:
+      id: gwo4p083uzgqq
+  queryParameters:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the query parameters
+    x-stoplight:
+      id: l95rmbwxzh46t
+  requestBody:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing the request body
+    x-stoplight:
+      id: 7n45sbzneqiy7
+  successResponses:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing all of the 2xx and 3xx responses
+    x-stoplight:
+      id: 7fg8x2knxrt44
+  errorResponses:
+    $ref: ../models/Check.yaml
+    description: The results of reviewing all of the 4xx and 5xx responses
+    x-stoplight:
+      id: 7wdor37m6icuz
+  methodUsed:
+    $ref: ../models/Check.yaml
+    description: Was the correct method used for the use case
+    x-stoplight:
+      id: sssoqtcym0jmw
+  parameters:
+    type: array
+    description: The reviews for parameters that are on this method
+    items:
+      $ref: ./ParameterReview.yaml
+      x-stoplight:
+        id: ow47ud4sjfegf
+    x-stoplight:
+      id: z121whc59cbqi
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: dy0j8swyh3j1c
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    x-stoplight:
+      id: leba1g563ovnu

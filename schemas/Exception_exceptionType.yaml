@@ -1,0 +1,13 @@
+type: string
+x-stoplight:
+  id: bv3400oq8nhw6
+enum:
+  - design
+  - implementation
+description: |-
+  Exception type.
+
+  design - API specification deviates from the SE design standards
+
+  implementation - API implemenation deviates from the SE design or authentication standards
+example: design

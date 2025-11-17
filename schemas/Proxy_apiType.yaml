@@ -1,0 +1,10 @@
+type: string
+x-stoplight:
+  id: a9h98gsvg6301
+enum:
+  - REST
+  - SOAP
+  - GraphQL
+description: 'Proxy API type, REST, SOAP or GraphQL. Entensible for other styles of API.'
+example: REST
+default: REST

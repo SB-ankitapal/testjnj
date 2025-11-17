@@ -1,0 +1,40 @@
+type: object
+x-stoplight:
+  id: fda9y5t26ffuu
+title: Path Mapping
+description: 'When an API design document has a path that consumers use, and that path is different on the backend, the SEAPIM Platform needs to map the request before passing on to the backend. An instance of this is one path in one version being mapped for one backend.'
+required:
+  - id
+  - specificationPath
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: 5h9aaugdp0tq5
+  assetId:
+    type: string
+    x-stoplight:
+      id: 4m7l26h8gan2c
+    description: Application identifier in the SE technology asset management system.
+  specificationPath:
+    type: string
+    x-stoplight:
+      id: hsa46hocvw968
+    description: The path as documented in the API specification
+  providerPath:
+    type: string
+    x-stoplight:
+      id: pns9dgwetqk0b
+    description: The path that exists in the provider system
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: gg71dx7yffwv4
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: dei4mhab27ugq

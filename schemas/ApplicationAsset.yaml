@@ -1,0 +1,21 @@
+type: object
+x-stoplight:
+  id: 0bgokybmjrthv
+description: 'Application id and name registered within the SE Asset Management system. If the application is both an API consumer and a proxy provider, it shares one of these records.'
+required:
+  - assetId
+  - assetName
+properties:
+  assetId:
+    type: string
+    x-stoplight:
+      id: l98b8lxywgxpn
+    description: Unique asset id for this application
+    example: '50600'
+  assetName:
+    type: string
+    x-stoplight:
+      id: m0h93kg828krj
+    description: Application asset name
+    example: SE API Management
+title: Application Asset

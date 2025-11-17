@@ -1,0 +1,40 @@
+type: object
+x-stoplight:
+  id: s6kz718qc8m8x
+title: Payload Size
+description: Capture the max size in MB that any request or response might be. Used to determine if SEAPIM platform needs to enable streaming or all requests and responses can be passed through in one chunk.
+required:
+  - id
+  - isStreaming
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: q3uqwa3zap8hb
+  isStreaming:
+    type: boolean
+    x-stoplight:
+      id: nn8v4h5v3xzu7
+    description: If the API need to have streaming supported
+  maxRequestSize:
+    type: number
+    x-stoplight:
+      id: 1oonq6bq9koj4
+    description: Max size in Mb of any request payload
+  maxResponseSize:
+    type: number
+    x-stoplight:
+      id: 3hcsgn9ltvw6y
+    description: Max size in Mb of any response payload
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: beo4pitgjcslx
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: wa8038vntw7wv

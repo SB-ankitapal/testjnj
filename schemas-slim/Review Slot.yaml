@@ -1,0 +1,72 @@
+type: object
+x-stoplight:
+  id: a8dcxxitaiexd
+title: Review Slot
+description: Information related to  reviewing an API Design Document. Currently it's just OpenAPI Specifications.
+required:
+  - id
+  - isBlocked
+  - isAvailable
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    x-stoplight:
+      id: 9mdm8jvohb62k
+  requestNumber:
+    type: string
+    x-stoplight:
+      id: fihucmxvx2za1
+    description: The identifying number in the request creation system to correlate which developemnt request this review is for
+  timeslot:
+    type: string
+    format: date-time
+    x-stoplight:
+      id: 5iqge3c2nu05f
+    description: The day and time this review slot would be.
+  isBlocked:
+    type: boolean
+    x-stoplight:
+      id: 7cseylfa2w1og
+    description: If this slot is blocked from being requested
+    readOnly: true
+  isAvailable:
+    type: boolean
+    x-stoplight:
+      id: g8jgoh68g69bt
+    description: 'If this slot is available, used to identify selected review slots. A review exists if available is false. Blocked reviews don''t exist and can''t be selected.'
+    readOnly: true
+  justification:
+    type: string
+    x-stoplight:
+      id: orxizohqgg8oj
+    description: 'If there are defects detected when requesting a review, or updating what is being reviewed, this is the justification given by the requester to request an exception.'
+  changes:
+    type: string
+    x-stoplight:
+      id: y273zgljgvp46
+    description: The changes that are being made to the design for this review.
+  requestedBy:
+    $ref: 'stoplight://resources/overrides/JMQvznLc4GE'
+    x-stoplight:
+      id: h21kgdpq76gma
+    description: The API Designer that requested the review
+  developmentRequest:
+    $ref: 'stoplight://resources/overrides/23wtMfeAuTE'
+    x-stoplight:
+      id: t3wmzoi2xmvqx
+    description: The development request which this review is for
+  version:
+    $ref: 'stoplight://resources/overrides/kYI2PrWfF4M'
+    x-stoplight:
+      id: clae20mz8n4j7
+    description: The version of the API Design this review is for
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: mlid53so3lfue
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    x-stoplight:
+      id: ugmp5koir52xg

@@ -1,0 +1,13 @@
+type: string
+x-stoplight:
+  id: yya9ry1l9llfy
+enum:
+  - info_pending
+  - in_review
+  - pending_approval
+  - in_development
+  - in_validation
+  - closed
+  - rejected
+description: Development request status
+example: in_review

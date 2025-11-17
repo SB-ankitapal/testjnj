@@ -1,0 +1,48 @@
+type: object
+x-stoplight:
+  id: eide2aoz618sw
+title: Defect
+description: One problem identified by Spectral system (The same tool used in AViD).
+required:
+  - id
+  - createdAt
+  - updatedAt
+properties:
+  id:
+    $ref: ../models/Id.yaml
+    description: Database identifier
+    x-stoplight:
+      id: haahw7ydsz5xc
+  error:
+    type: string
+    description: the error that was identified
+    x-stoplight:
+      id: ewp35nmqjrcp9
+  path:
+    type: array
+    minItems: 1
+    description: yaml/json path to where the error is located in the document
+    items:
+      type: string
+      x-stoplight:
+        id: 7hxib1fsdyhi7
+    x-stoplight:
+      id: suciboqmwgold
+  severity:
+    type: string
+    enum:
+      - Error
+      - Warning
+      - Information
+      - Hint
+    description: The type of error that is identified
+    x-stoplight:
+      id: x4ica2h7tnzfv
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    x-stoplight:
+      id: gjzz1u2ec9cqv
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    x-stoplight:
+      id: wmatprnzj0a8a

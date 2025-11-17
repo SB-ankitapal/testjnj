@@ -1,0 +1,59 @@
+type: object
+x-stoplight:
+  id: zvaqo696ltosf
+title: Environment Provider
+description: |-
+  An API provider application for a specific environment.
+
+  A provider is also known as a backend application, a system that hosts the API service, lying behind the SEAPIM platform.
+required:
+  - assetId
+  - createdAt
+  - updatedAt
+  - environment
+properties:
+  assetId:
+    type: string
+    x-stoplight:
+      id: q3jfdqtuaagj7
+    example: '12345'
+    description: 'Application asset id, as defined in the SE asset management system'
+  providerUrls:
+    type: array
+    x-stoplight:
+      id: 8uhy758m4n188
+    description: Provider system URL for this API
+    items:
+      x-stoplight:
+        id: 8metsd9ha9647
+      type: string
+      format: uri
+  reverseProxies:
+    type: array
+    x-stoplight:
+      id: 7whc1gky9ieep
+    description: 'Regional reverse proxy details, if the provided is hosted in the SE private network'
+    items:
+      x-stoplight:
+        id: xk88bq3ug89ak
+      type: string
+  instructions:
+    type: string
+    x-stoplight:
+      id: ka9ltz94ecmy1
+    description: Extra information to help connect with a provider
+  createdAt:
+    $ref: ../models/CreatedAt.yaml
+    description: The time this record was created
+    x-stoplight:
+      id: ylusqmozm7yi2
+  updatedAt:
+    $ref: ../models/UpdatedAt.yaml
+    description: The time this record was last updated
+    x-stoplight:
+      id: zb6whgupiq48p
+  environment:
+    $ref: ./Environment.yaml
+    x-stoplight:
+      id: apu8wfiane0o5
+    description: API requirements-related SEAPIM environment
